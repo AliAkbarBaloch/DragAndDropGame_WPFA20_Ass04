@@ -10,8 +10,8 @@
 	   		echo mysqli_error();
 	   		# code...
 	   	}
-	   	$score= strtoupper(substr(md5(time().rand(10000,99999)), 0, 2));
-	   	$level=1;
+	   	$score= rand(1,100);
+	   	$level=rand(1,10);
 	   	$date = date('Y-m-d H:i:s');
 
 	   	session_start();

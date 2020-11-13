@@ -28,21 +28,26 @@
    	    while ($row=mysqli_fetch_array($result)) {
    	    	$check=$row['Player_ID'];
    	    }
-   	if ($check==$_POST['Player_ID']) {
 
-   		
-   		
 
-   		echo "<script>alert('id {$check} is Already Available Please change ID');
-                   window.location='ReEntry.php';
-   		</script>";
-   	}
-   	else{
+    if (isset($_POST['submit'])) {
 
-           $_SESSION['Login']="YES";
-           header('Location:Game.php');
+       	if ($check==$_POST['Player_ID']) {
 
-   	}
+       		
+       		
+
+       		echo "<script>alert('id {$check} is Already Available Please change ID');
+                       window.location='ReEntry.php';
+       		</script>";
+       	}
+     	else{
+
+             $_SESSION['Login']="YES";
+             header('Location:Game.php');
+
+     	}
+    }
 
 
     ?>
